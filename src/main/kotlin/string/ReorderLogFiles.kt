@@ -25,11 +25,23 @@ fun reorderLogFiles(logs: Array<String>): Array<String> {
     }
 
     val sorted = letterLogs.sortedWith { s1, s2 ->
+        // 각 문자열이 ""로 구분되어 있다. 맨 처음과 나머지만 필요하기 때문에 limit을 2로 둔다.
         val split1 = s1.split(" ", limit = 2)
         val split2 = s2.split(" ", limit = 2)
 
+        // 0, 1 인덱스는 각각 id와 content이다.
         val (id, content) = split1
         val (id2, content2) = split2
+
+//        if (content == content2) {
+//            if (id == id2) {
+//                0
+//            } else if (id > id2) {
+//                1
+//            } else {
+//                -1
+//            }
+//        }
 
         val compared = content.compareTo(content2)
 
