@@ -1,3 +1,5 @@
+package string
+
 fun main() {
     isPalindrome("A man, a plan, a canal: Panama")
 }
