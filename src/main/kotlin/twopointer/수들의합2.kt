@@ -47,7 +47,7 @@ fun functionTwoPointer(l: List<Int>, m: Int): Int {
         if (sum < m) {
             sum += l[end++]
         } else {
-            sum -= l[start]
+            sum -= l[start++]
         }
 
         if (sum == m) {
