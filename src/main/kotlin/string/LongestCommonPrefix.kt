@@ -1,11 +1,9 @@
 package string
 
-
 fun main() {
     val a = longestCommonPrefix(arrayOf("a"))
     println(a)
 }
-
 
 fun longestCommonPrefix(strs: Array<String>): String {
     var i = 0
@@ -18,10 +16,10 @@ fun longestCommonPrefix(strs: Array<String>): String {
             it[i]
         }.count { it == ch } == strs.size
 
-        if(map){
+        if (map) {
             i++
-        }else{
-            if(i == 0 ){
+        } else {
+            if (i == 0) {
                 return ""
             }
             break
