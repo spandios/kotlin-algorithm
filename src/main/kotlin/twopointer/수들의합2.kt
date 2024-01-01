@@ -7,9 +7,12 @@ fun main() {
 }
 
 // 반복문
-fun function(l: List<Int>, m: Int): Int {
+fun function(
+    l: List<Int>,
+    m: Int,
+): Int {
     var cnt = 0
-    for (i in 0..<l.size) {
+    for (i in l.indices) {
         var sum = l[i]
         if (sum == m) {
             cnt++
@@ -31,7 +34,10 @@ fun function(l: List<Int>, m: Int): Int {
 
 // two pointer도 윈도우 슬라이딩과 마찬가지로 1차원 배열에서 연속된 된 값을 구할 때 사용할 수 있다.
 // 다만 윈도우슬라이딩은 고정된 범위라면 포인터는 한 인덱스씩 움직이면서 체크한다.
-fun functionTwoPointer(l: List<Int>, m: Int): Int {
+fun functionTwoPointer(
+    l: List<Int>,
+    m: Int,
+): Int {
     var cnt = 0
 
     var start = 0
