@@ -1,9 +1,9 @@
-package explore.array_strings
+package explore.array
 
 import java.util.LinkedList
 
 fun main() {
-    println(plusOne(intArrayOf(1,2,3,)).contentToString())
+    println(plusOne(intArrayOf(1, 2, 3)).contentToString())
 }
 
 /**
@@ -15,13 +15,13 @@ fun plusOne(digits: IntArray): IntArray {
 
     results[results.lastIndex] += 1
 
-    for (i in results.size - 1  downTo 0){
-        if(results[i] == 10){
+    for (i in results.indices.reversed()) {
+        if (results[i] == 10) {
             results[i] = 0
             val previousDigit = results.getOrNull(i - 1)
-            if(previousDigit == null){
+            if (previousDigit == null) {
                 results.addFirst(1)
-            }else{
+            } else {
                 results[i - 1] += 1
             }
         }
