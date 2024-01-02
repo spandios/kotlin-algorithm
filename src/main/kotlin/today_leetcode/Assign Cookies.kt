@@ -25,10 +25,8 @@ fun findContentChildren(g: IntArray, s: IntArray): Int {
         if(g[gIndex] <= s[sIndex]){
             result += 1
             gIndex++
-            sIndex++
-        }else{
-            sIndex++
         }
+        sIndex++
     }
 
 
