@@ -1,6 +1,7 @@
 package explore.array2d
 
 fun main() {
+    println(findDiagonalOrder(arrayOf(intArrayOf(2, 5), intArrayOf(8, 4), intArrayOf(0, -1))).contentToString())
 }
 
 /**
@@ -12,30 +13,39 @@ fun findDiagonalOrder(mat: Array<IntArray>): IntArray {
 
     var i = 0
     var j = 0
-
-    while (i < mat.size && j < mat[i].size) {
+    val size = mat.size * mat[i].size
+    val maxJ = mat[i].lastIndex
+    while (results.size < size) {
         // up right
-        while (i >= 0) {
+        while (i >= 0 && j < mat[i].size) {
             results.add(mat[i][j])
+            if (results.size == size) {
+                return results.toIntArray()
+            }
             i--
             j++
         }
 
-        if (j == mat) {
-            i = 0
+        i++
+        j--
+
+        if (mat.get(i).getOrNull(j + 1) == null) {
+            i++
         } else {
-            i += 1
-            j = mat[i].size - 1
+            j++
         }
 
         // down left
-        while (i < mat.size && j > 0) {
+        while (i < mat.size && j >= 0) {
             results.add(mat[i][j])
             i++
             j--
         }
 
-        if (i == mat.lastIndex) {
+        i--
+        j++
+
+        if (mat.getOrNull(i + 1) == null) {
             j++
         } else {
             i++
