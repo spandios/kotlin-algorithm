@@ -1,4 +1,4 @@
-package src.main.kotlin.explore.array2d
+package src.main.kotlin.explore.string2array.array2d
 
 // [[1]]
 // ySize=  1
