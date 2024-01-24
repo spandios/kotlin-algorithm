@@ -1,4 +1,4 @@
-package src.main.kotlin.explore.twopointer
+package src.main.kotlin.explore.string2array.twopointer
 
 fun main() {
 }

@@ -1,4 +1,4 @@
-package src.main.kotlin.explore.twopointer
+package src.main.kotlin.explore.string2array.twopointer
 
 fun main() {
     println(twoSum(intArrayOf(2, 7, 11, 15), 9).contentToString())
