@@ -19,11 +19,11 @@ fun main() {
 
 fun maxProfit(prices: IntArray): Int {
     var profit = 0
-    var minPrice = -1
+    var minPrice = prices[0]
 
     prices.forEach { price ->
-        minPrice = price.coerceAtMost(minPrice)
-        profit = price.coerceAtLeast(price - minPrice)
+        minPrice = minPrice.coerceAtMost(price)
+        profit = profit.coerceAtLeast(price - minPrice)
     }
     return profit
 }
